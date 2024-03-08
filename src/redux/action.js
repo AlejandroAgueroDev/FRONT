@@ -10,7 +10,7 @@ export const REFRESH_ORDER='REFRESH_ORDER'
 
 export const allGame = (valorInput) => {
   return async (dispatch) => {
-    let URL = "https://back-1ngv.onrender.com";
+    let URL = "https://back-1ngv.onrender.com/videogames";
 
     const response = await axios.get(URL);
     const gameBD = response.data.db;
@@ -64,7 +64,7 @@ export const orderByName = (order) => {
 
 export const get_genres = () => {
   return async (dispatch) => {
-    let URL = 'https://back-1ngv.onrender.com'
+    let URL = 'https://back-1ngv.onrender.com/genres'
 
     const response = await axios.get(URL)
     const genres = response.data
