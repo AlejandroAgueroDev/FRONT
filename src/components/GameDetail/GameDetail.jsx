@@ -23,20 +23,43 @@ function GameDetail() {
   navigate("/home");
  };
 
+ const handleDelete = async () => {
+  try {
+   await axios.delete(`https://back-1ngv.onrender.com/videogames/delete/${id}`);
+   alert("Videojuego eliminado exitosamente");
+   navigate("/home");
+  } catch (error) {
+   console.error(error);
+   alert("Hubo un error al intentar eliminar el videojuego");
+  }
+ };
+
  return (
   <div className={styles.background}>
    {game ? (
     <>
-     <button className={styles.button} onClick={handleClick}>Home</button>
+     {game.isFromDatabase && (
+      <button className={styles.button} onClick={handleDelete}>
+       Eliminar
+      </button>
+     )}
+
+     <button className={styles.button} onClick={handleClick}>
+      Home
+     </button>
 
      <div>
       <section>
-        <label className={styles.label}><span className={styles.underline}>ID</span>: </label>
+       <label className={styles.label}>
+        <span className={styles.underline}>ID</span>:{" "}
+       </label>
        <h1 className={styles.h1}>{game.id}</h1>
       </section>
 
       <section>
-       <h2 className={styles.h2}><span className={styles.underline}>NAME</span>: {game.name}</h2>
+       <h2 className={styles.h2}>
+        <span className={styles.underline}>NAME</span>: {game.name}
+       </h2>
       </section>
 
       <section>
@@ -48,23 +71,32 @@ function GameDetail() {
       </section>
 
       <section>
-       <p className={styles.p}><span className={styles.underline}>PLATFORMS</span>: {game.platforms}</p>
+       <p className={styles.p}>
+        <span className={styles.underline}>PLATFORMS</span>: {game.platforms}
+       </p>
       </section>
 
       <section>
-       <p className={styles.p}><span className={styles.underline}>DESCRIPTION</span>: {game.description_raw}</p>
+       <p className={styles.p}>
+        <span className={styles.underline}>DESCRIPTION</span>:{" "}
+        {game.description_raw}
+       </p>
       </section>
 
       <section>
-       <p className={styles.p}><span className={styles.underline}>GENRE</span>: {game.genres}</p>
+       <p className={styles.p}>
+        <span className={styles.underline}>GENRE</span>: {game.genres}
+       </p>
       </section>
 
       <section>
-       <p className={styles.p}><span className={styles.underline}>RATING</span>: {game.rating}</p>
+       <p className={styles.p}>
+        <span className={styles.underline}>RATING</span>: {game.rating}
+       </p>
       </section>
      </div>
     </>
-   ) : (   
+   ) : (
     <div className={styles.loaderContainer}>
      <div className={styles.loader}>
       <div className={styles.loaderSquare}></div>
