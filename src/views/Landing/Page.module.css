@@ -1,0 +1,69 @@
+/**************** BUTTON ***************/
+
+.button {
+ margin-top: 60px;
+ padding: 17px 40px;
+ border-radius: 10px;
+ border: 0;
+ background-color: rgb(255, 56, 86);
+ letter-spacing: 1.5px;
+ font-size: 40px;
+ transition: all 0.3s ease;
+ box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+ color: hsl(0, 0%, 100%);
+ cursor: pointer;
+}
+
+.button:hover {
+ box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+
+.button:active {
+ background-color: rgb(255, 56, 86);
+ box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+ transform: translateY(5px);
+ transition: 200ms;
+}
+
+/**************** TEXT ***************/
+
+.h1 {
+ font-family: "Varela Round", sans-serif;
+ font-weight: 500;
+ font-size: 200%;
+ font-style: normal;
+ border-radius: 30px;
+ -webkit-backdrop-filter: blur(7px);
+ backdrop-filter: blur(6px);
+ display: inline-block;
+ margin-top: 150px;
+ padding: 10px;
+ border: 1px solid #000000;
+ background-color: #e9e4e481;
+}
+
+.h4 {
+ font-family: "Varela Round", sans-serif;
+ font-weight: 400;
+ font-size: 140%;
+ font-style: italic;
+ margin-top: 80px;
+ -webkit-backdrop-filter: blur(7px);
+ backdrop-filter: blur(6px);
+ display: inline-block;
+ border-radius: 30px;
+ padding: 10px;
+ border: 1px solid #000000;
+ background-color: #e9e4e481;
+}
+
+.background {
+ background: url("../src/assets/Fondo 11.jpg");
+ background-position: center center;
+ background-size: cover;
+ position: fixed;
+ margin: 0;
+ padding: 0;
+ height: 100%;
+ width: 100%;
+}
