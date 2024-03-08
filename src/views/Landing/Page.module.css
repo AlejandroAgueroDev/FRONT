@@ -58,7 +58,7 @@
 }
 
 .background {
- background: url("../src/assets/Fondo 11.jpg");
+ background: url("../../assets/bg_11.jpg");
  background-position: center center;
  background-size: cover;
  position: fixed;
