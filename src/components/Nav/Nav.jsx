@@ -13,8 +13,7 @@ const Nav = () => {
   const genres = useSelector(state => state.get_genres);
   const [refresh, setRefresh] = useState("");
   const [forseUpdate, setForseUpdate] = useState(true)
-  const [selectedGenre, setSelectedGenre] = useState("Todos");
-  const [selectedOrigin, setSelectedOrigin] = useState("API");
+
 
   const handleGenreChange = (event) => {
     dispatch(select_genres(event.target.value));
@@ -26,7 +25,6 @@ const Nav = () => {
     setRefresh(event.target.value);
     dispatch(allGame(event.target.value))
     setSelectedOrigin(event.target.value);
-    setSelectedGenre("Todos");
     setForseUpdate(!forseUpdate)
   };
 
@@ -42,8 +40,7 @@ const Nav = () => {
     setRefresh("")
     setForseUpdate(!forseUpdate)
 
-    setSelectedGenre("Todos");
-    setSelectedOrigin("API");
+    
   };
 
   useEffect(() => {
@@ -59,7 +56,7 @@ const Nav = () => {
       <div className={styles.navBar}>
 
         <label htmlFor="genre">Género:</label>
-        <select className={styles.select} id="genre" value={selectedGenre} onChange={handleGenreChange}>
+        <select className={styles.select} id="genre" value={refresh} onChange={handleGenreChange}>
           <option value="Todos" >Todos</option>
           {genres.map(genre => (
             <option key={genre.id} value={genre.name}>
@@ -70,7 +67,7 @@ const Nav = () => {
 
 
         <label htmlFor="origin">Origen:</label>
-        <select className={styles.select} id="origin" value={selectedOrigin} onChange={handleOriginChange}>
+        <select className={styles.select} id="origin" value={refresh} onChange={handleOriginChange}>
           <option className={styles.option} value="API">API</option>
           <option className={styles.option} value="BD">Base de Datos</option>
         </select>
